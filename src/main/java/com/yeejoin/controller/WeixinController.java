@@ -22,7 +22,7 @@ import java.util.Arrays;
 
 @RestController
 public class WeixinController {
-    @RequestMapping(value = "/fireweixin/wechat1", method = RequestMethod.GET)
+    @RequestMapping(value = "/fireweixin/wechat", method = RequestMethod.GET)
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // 微信加密签名

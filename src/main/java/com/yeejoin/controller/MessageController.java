@@ -22,7 +22,7 @@ public class MessageController {
     private String toUser = "";
     private String fromUser = "";
 
-    @RequestMapping(value = "/fireweixin/wechat",method = {RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value = "/fireweixin/wechat",method = RequestMethod.POST)
     public String receiveMessage(@RequestBody(required = false) String request) throws DocumentException, IOException, JAXBException {
         String response = "";
 

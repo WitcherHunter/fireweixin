@@ -119,15 +119,15 @@ public class GenerateXml {
 
     public static String mapEquip(EquipModel model, String code) {
         String url;
-        if (model.getEquipVideo() == null)
+        if (model.getEquipVideo() == null || model.getEquipVideo().isEmpty())
             url = "<a>点击查看演示视频</a>";
         else
-            url = "<a href=" + model.getEquipVideo() + ">点击查看演示视频</a>";
+            url = "<a href=\"" + model.getEquipVideo() + "\">点击查看演示视频</a>";
 
-        String count = model.getCount() == null ? "20个" : model.getCount();
-        String maintenanceDate = model.getMaintenanceDate() == null ? "2016-12-01" : model.getMaintenanceDate();
-        String maintenanceNextDate = model.getMaintenanceNextDate() == null ? "2017-12-01" : model.getMaintenanceNextDate();
-        String indate = model.getInDate() == null ? "2015-02-02" : model.getInDate();
+        String count = (model.getCount() == null || model.getCount().isEmpty()) ? "20个" : model.getCount();
+        String maintenanceDate = (model.getMaintenanceDate() == null || model.getMaintenanceDate().isEmpty()) ? "2016-12-01" : model.getMaintenanceDate();
+        String maintenanceNextDate = (model.getMaintenanceNextDate() == null || model.getMaintenanceNextDate().isEmpty()) ? "2017-12-01" : model.getMaintenanceNextDate();
+        String indate = (model.getInDate() == null || model.getInDate().isEmpty())? "2015-02-02" : model.getInDate();
 
         return "名称:" + model.getEquipname()
                 + "\n数量:" + count
