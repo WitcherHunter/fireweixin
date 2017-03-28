@@ -1,6 +1,6 @@
 package com.yeejoin.controller;
 
-import com.yeejoin.handler.HandleEventKt;
+import com.yeejoin.util.GenerateXml;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +14,7 @@ public class SendNotificationController {
 
         @RequestMapping(value = "/fireweixin/notification",method = RequestMethod.GET)
         public String sendNotification(@RequestBody(required = false) String request){
-            HandleEventKt.handleNotificationEvent();
+            GenerateXml.handleNotificationEvent();
             return "success";
         }
 }

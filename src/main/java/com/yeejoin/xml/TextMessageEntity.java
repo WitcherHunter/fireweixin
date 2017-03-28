@@ -3,6 +3,7 @@ package com.yeejoin.xml;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 /**
  * Created by zhou on 2017/3/11.
@@ -11,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @XmlRootElement(name = "xml")
-public class TextMessageEntity {
+public class TextMessageEntity implements Serializable{
     @XmlElement
     private String ToUserName;
 
